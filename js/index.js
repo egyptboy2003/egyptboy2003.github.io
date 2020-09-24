@@ -1,36 +1,19 @@
-function getUserData(form) {
-	var uname = form.unameinput.value;
-	var fname = form.fnameinput.value;
-	var lname = form.lnameinput.value;
-	var pwd = form.pwdinput.value;
-	var email = form.emailinput.value;
-	alert(uname + fname + lname + pwd + email);
-	writeUserData(uname, fname, lname, pwd, email);
+var database = firebase.database();
+function getUserData() {
+  var form = document.getElementById("registerform");
+  var fname = form.fnameinput.value;
+  var lname = form.lnameinput.value;
+  var pwd = form.pwdinput.value;
+  var email = form.emailinput.value;
+  alert(fname + lname + pwd + email);
+  writeUserData(fname, lname, pwd, email);
 }
 
-function writeUserData(uname, fname, lname, pwd, email) {
-	alert("received: " + uname);
-
-	firebase
-		.database()
-		.ref("venturers/" + uname)
-		.set(
-			{
-				firstname: fname
-			},
-			function(error) {
-				if (error) {
-					alert("the error is: ");
-					alert(error);
-				} else {
-					alert("done");
-				}
-			}
-		);
-}
-function test() {
-	alert("test complete");
+function writeUserData(fname, lname, pwd, email) {
+  database.ref("venturers/" + fname).set({
+    firstname: fname,
+    password: pwd
+  });
 }
 
-//var registerForm = document.getElementById("registerform");
-//document.getElementById("submitbtn").addEventListener("click", );
+document.getElementById("submitbtn").addEventListener("click", getUserData);
