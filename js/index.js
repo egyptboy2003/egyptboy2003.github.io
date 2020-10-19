@@ -1,6 +1,6 @@
 var database = firebase.database();
 function getUserData() {
-  var form = document.getElementById("registerform");
+  var form = document.getElementById('registerform');
   var fname = form.fnameinput.value;
   var lname = form.lnameinput.value;
   var pwd = form.pwdinput.value;
@@ -10,7 +10,7 @@ function getUserData() {
 }
 
 function writeUserData(fname, lname, pwd, email) {
-  database.ref("venturers/" + fname).set({
+  database.ref('venturers/' + fname).set({
     firstname: fname,
     lastname: lname,
     password: pwd,
@@ -18,4 +18,4 @@ function writeUserData(fname, lname, pwd, email) {
   });
 }
 
-document.getElementById("submitbtn").addEventListener("click", getUserData);
+document.getElementById('submitbtn').addEventListener('click', getUserData);
