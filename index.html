@@ -1,33 +1,60 @@
-<head>
-		<link rel="stylesheet" href="css/index.css">
-</head>
+<!DOCTYPE HTML>
+<html>
+    <head>
+        <title>Vents Direct</title>
+        <style>
+            #navbar {
+                overflow: hidden;
+                background-color: grey;
+                font-family: Arial;
+            }
+            #navbar a {
+                float: right;
+                font-size: 20px;
+                color: white;
+                text-align: center;
+                padding: 14px 16px;
+                text-decoration: none;
+            }
+            #right #navbar a {
+                float: left;
+            }
+            #navbar li a:hover {
+                background-color: red;
+            }
 
-<body>
-	<h1>Welcome</h1>
-	<form id='registerform' name='registerform' action='dashboard.html' method='POST'>
-		First Name: <input name="fnameinput" id="fnameinput" type="text"><br>
-		Last Name: <input name="lnameinput" id="lnameinput" type="text"><br>
-		Password: <input name="pwdinput" id="pwdinput" type="password"><br>
-		Email: <input name="emailinput" id="emailinput" type="email"><br>
-    <input id="registerbtn" type="submit" value="Register"><input id="loginbtn" type="submit" value="Login">
-	</form>
+            #navbar ul {
+                list-style-type: none;
+                margin: 0;
+                padding: 0;
+                overflow: hidden;
+                background-color: #333;
+            }
 
-<script src="https://www.gstatic.com/firebasejs/6.1.0/firebase.js"></script>
-  <script>
-  // Your web app's Firebase configuration
-  // For Firebase JS SDK v7.20.0 and later, measurementId is optional
-  const firebaseConfig = {
-  apiKey: "AIzaSyBaKtWrxVi0CKiMWdL9OjC6fYU-iho9F_M",
-  authDomain: "venturer-details.firebaseapp.com",
-  databaseURL: "https://venturer-details.firebaseio.com",
-  projectId: "venturer-details",
-  storageBucket: "venturer-details.appspot.com",
-  messagingSenderId: "1010476752217",
-  appId: "1:1010476752217:web:2f6190cc8ef7f2d32e0048",
-  measurementId: "G-NB8EXJCR1Q"
-};
-  // Initialize Firebase
-  firebase.initializeApp(firebaseConfig);
-</script>
-<script src="js/index.js"></script>
-</body>
+            #navbar li {
+                float: left;
+            }
+
+            #navbar li a {
+                display: block;
+                color: white;
+                text-align: center;
+                padding: 14px 16px;
+                text-decoration: none;
+            }
+
+            #navbar li #right-align {
+                float: right;
+            }
+        </style>
+    </head>
+    <body>
+        <div id='navbar'>
+            <ul>
+                <li><a href="#index">Home</a></li>
+                <li><a href="#files">Files</a></li>
+                <li id="right-align"><a href="#register">Register/Login</a></li>
+            </ul>
+        </div>
+    </body>
+</html>

@@ -3,14 +3,9 @@ input {
     padding: 12px 20px;
     margin: 8px 0;
     box-sizing: border-box;
-}
-
-input[type=submit]{
-    width: 45%;
-    margin: 8px 35px;
-}
-
-body {
-    font-family: 'Comic Sans MS';
-    font-size: 20;
-}   
+  }
+  
+  body {
+      font-family: 'Comic Sans MS';
+      font-size: 20;
+  }
