@@ -18,4 +18,5 @@ function writeUserData(fname, lname, pwd, email) {
   });
 }
 
-document.getElementById('submitbtn').addEventListener('click', getUserData);
+document.getElementById('registerbtn').addEventListener('click', getUserData);
+document.getElementById('loginbtn').addEventListener('click', getUserData);
