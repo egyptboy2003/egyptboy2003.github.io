@@ -3,102 +3,34 @@
 
 <head>
     <title>Vents Direct</title>
-    <style>
-        body,
-        html {
-            height: 100%;
-            scrollbar-width: none;
-            margin: 0;
-        }
-
-        /* Remove scrollbar for Chrome/Safari/Opera */
-        body::-webkit-scrollbar {
-            display: none;
-        }
-
-        #navbar {
-            overflow: hidden;
-            background-color: grey;
-            position: sticky;
-        }
-
-        #navbar a {
-            float: right;
-            font-size: 16px;
-            font-weight: 550;
-            color: white;
-            text-align: center;
-            padding: 14px 16px;
-            text-decoration: none;
-        }
-
-        #right #navbar a {
-            float: left;
-        }
-
-        #navbar li a:hover {
-            background-color: red;
-        }
-
-        #navbar ul {
-            list-style-type: none;
-            margin: 0;
-            padding: 0;
-            overflow: hidden;
-            background-color: #333;
-        }
-
-        #navbar li {
-            float: left;
-        }
-
-        #navbar li a {
-            display: block;
-            color: white;
-            text-align: center;
-            padding: 14px 16px;
-            text-decoration: none;
-            font-family: 'Rubik', sans-serif;
-        }
-
-        .parallax {
-            background-image: url("resources/water.jpg");
-            height: 100%;
-            background-attachment: fixed;
-            background-position: center;
-            background-repeat: no-repeat;
-            background-size: cover;
-        }
-
-        .header {
-            color: rgb(28, 23, 23);
-            font-size: 100px;
-            text-align: center;
-            padding: 50px 100px 50px 100px;
-            background-color: rgba(255, 255, 255, 0.65);
-            position: absolute;
-            top: 50%;
-            left: 50%;
-            transform: translate(-50%, -50%);
-            border-radius: 50px;
-        }
-    </style>
+    <link rel="stylesheet" href="css/index.css">
 </head>
 
 <body>
-    <div class="parallax">
-        <div id='navbar'>
-            <ul>
-                <li><a href="./index.html">Home</a></li>
-                <li><a href="#files">Files</a></li>
-                <li style="float:right" id="right-align"><a href="login.html">Register/Login</a></li>
-            </ul>
-        </div>
-        <div class='header'>
-            Venturers Direct
-        </div>
+    <div id='navbar'>
+        <ul>
+            <li><a href="./index.html">Home</a></li>
+            <li><a href="#files">Files</a></li>
+            <li style="float:right" id="right-align"><a href="login.html">Register/Login</a></li>
+        </ul>
     </div>
-
+    <div id='bgimg-1' class='parallax'>
+        <div class='caption' id='header'>Venturers Direct</div>
+    </div>
+    <div id='txt-1' class='paragraph'>
+        <p> Lorem ipsum dolor sit amet, consectetur adipiscing elit. Curabitur in purus ipsum. Cras ut leo at turpis
+            faucibus viverra at eu nulla. Pellentesque imperdiet et justo ut imperdiet. Ut sed pharetra nisi, efficitur
+            blandit massa. Vestibulum finibus iaculis dolor in vestibulum. Mauris felis metus, malesuada a molestie vel,
+            congue nec dui. Aliquam non tortor fermentum, elementum nisi at, porta nunc. Nunc in elit at quam efficitur
+            iaculis. Sed non mi ornare urna sodales aliquam id non risus. Fusce consequat libero nec ex bibendum
+            porttitor.
+            Curabitur id rhoncus nulla. Etiam a sagittis felis. Nulla egestas mattis metus quis rhoncus. Sed vehicula
+            lorem vitae ullamcorper congue. Nam gravida nunc et urna faucibus dapibus. Proin eu tincidunt dui, consequat
+            pharetra nunc. Sed blandit eu orci vel mattis. Ut id sem aliquam, vehicula mauris at, accumsan urna. In
+            ornare nec massa in tristique. Donec ligula nisl, efficitur sed turpis et, lobortis convallis risus. Nunc
+            lectus purus, tempus non iaculis sed, semper vitae est. Donec lacinia et nibh eu dapibus. Vestibulum
+            blandit, nibh ut lobortis posuere, ex risus ornare velit, vitae vestibulum metus mauris sed turpis.</p>
+    </div>
 </body>
 
 </html>
