@@ -1,51 +1,92 @@
 <!DOCTYPE HTML>
 <html>
-    <head>
-        <title>Vents Direct</title>
-        <style>
-            #navbar {
-                overflow: hidden;
-                background-color: grey;
-                font-family: Arial;
-            }
-            #navbar a {
-                float: right;
-                font-size: 20px;
-                color: white;
-                text-align: center;
-                padding: 14px 16px;
-                text-decoration: none;
-            }
-            #right #navbar a {
-                float: left;
-            }
-            #navbar li a:hover {
-                background-color: red;
-            }
 
-            #navbar ul {
-                list-style-type: none;
-                margin: 0;
-                padding: 0;
-                overflow: hidden;
-                background-color: #333;
-            }
+<head>
+    <title>Vents Direct</title>
+    <style>
+        body,
+        html {
+            height: 100%;
+            scrollbar-width: none;
+            margin: 0;
+        }
 
-            #navbar li {
-                float: left;
-            }
+        /* Remove scrollbar for Chrome/Safari/Opera */
+        body::-webkit-scrollbar {
+            display: none;
+        }
 
-            #navbar li a {
-                display: block;
-                color: white;
-                text-align: center;
-                padding: 14px 16px;
-                text-decoration: none;
-            }
+        #navbar {
+            overflow: hidden;
+            background-color: grey;
+            position: sticky;
+        }
 
-        </style>
-    </head>
-    <body>
+        #navbar a {
+            float: right;
+            font-size: 16px;
+            font-weight: 550;
+            color: white;
+            text-align: center;
+            padding: 14px 16px;
+            text-decoration: none;
+        }
+
+        #right #navbar a {
+            float: left;
+        }
+
+        #navbar li a:hover {
+            background-color: red;
+        }
+
+        #navbar ul {
+            list-style-type: none;
+            margin: 0;
+            padding: 0;
+            overflow: hidden;
+            background-color: #333;
+        }
+
+        #navbar li {
+            float: left;
+        }
+
+        #navbar li a {
+            display: block;
+            color: white;
+            text-align: center;
+            padding: 14px 16px;
+            text-decoration: none;
+            font-family: 'Rubik', sans-serif;
+        }
+
+        .parallax {
+            background-image: url("resources/water.jpg");
+            height: 100%;
+            background-attachment: fixed;
+            background-position: center;
+            background-repeat: no-repeat;
+            background-size: cover;
+        }
+
+        .header {
+            color: rgb(28, 23, 23);
+            font-size: 100px;
+            text-align: center;
+            padding: 50px 100px 50px 100px;
+            background-color: rgba(255, 255, 255, 0.65);
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            border-radius: 50px;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="parallax">
         <div id='navbar'>
             <ul>
                 <li><a href="./index.html">Home</a></li>
@@ -53,5 +94,11 @@
                 <li style="float:right" id="right-align"><a href="login.html">Register/Login</a></li>
             </ul>
         </div>
-    </body>
+        <div class='header'>
+            Venturers Direct
+        </div>
+    </div>
+
+</body>
+
 </html>
