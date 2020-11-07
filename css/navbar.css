@@ -1,0 +1,63 @@
+body,
+html {
+    height: 100%;
+    scrollbar-width: none;
+    margin: 0;
+}
+
+
+/* Remove scrollbar for Chrome/Safari/Opera */
+
+body::-webkit-scrollbar {
+    display: none;
+}
+
+#navbar {
+    overflow: hidden;
+    background-color: grey;
+    position: sticky;
+    margin-bottom: 2%;
+    z-index: 10000;
+}
+
+#navbar a {
+    float: right;
+    font-size: 16px;
+    font-weight: 550;
+    color: white;
+    text-align: center;
+    padding: 14px 16px;
+    text-decoration: none;
+}
+
+#right #navbar a {
+    float: left;
+}
+
+#navbar li a:hover {
+    background-color: #222;
+}
+
+#navbar ul {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    overflow: hidden;
+    background-color: #333;
+    position: fixed;
+    width: 100%;
+    top: 0;
+}
+
+#navbar li {
+    float: left;
+}
+
+#navbar li a {
+    display: block;
+    color: white;
+    text-align: center;
+    padding: 14px 16px;
+    text-decoration: none;
+    font-family: 'Rubik', sans-serif;
+}
