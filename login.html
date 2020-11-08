@@ -1,6 +1,8 @@
 <head>
-    <link rel="stylesheet" href="css/login.css">
+    <title>Login | Venturers Direct</title>
+    <!-- <link rel="stylesheet" href="css/login.css"> -->
     <link rel="stylesheet" href="css/navbar.css">
+    <link type="text/css" rel="stylesheet" href="https://www.gstatic.com/firebasejs/ui/4.7.1/firebase-ui-auth.css" />
 </head>
 
 <body>
@@ -11,7 +13,7 @@
             <li style="float:right" id="right-align"><a href="login.html">Register/Login</a></li>
         </ul>
     </div>
-    <div id='login-form'>
+    <!-- <div id='login-form'>
         <form id='registerform' name='registerform' action='dashboard.html' method='POST'>
             <input name="fnameinput" id="fnameinput" type="text" placeholder="First Name"><br>
             <input name="lnameinput" id="lnameinput" type="text" placeholder="Last Name"><br>
@@ -19,7 +21,9 @@
             <input name="pwdinput" id="pwdinput" type="password" placeholder="Password"><br>
             <input id="registerbtn" type="submit" value="Register"><input id="loginbtn" type="submit" value="Login">
         </form>
-    </div>
+    </div> -->
+    <div id="firebaseui-auth-container"></div>
+    <div id="loader">Loading...</div>
     <script src="https://www.gstatic.com/firebasejs/6.1.0/firebase.js"></script>
     <script>
         // Your web app's Firebase configuration
@@ -37,5 +41,6 @@
         // Initialize Firebase
         firebase.initializeApp(firebaseConfig);
     </script>
+    <script src="https://www.gstatic.com/firebasejs/ui/4.7.1/firebase-ui-auth.js"></script>
     <script src="js/index.js"></script>
 </body>
