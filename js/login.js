@@ -2,23 +2,42 @@ var database = firebase.database();
 
 // Register user data
 function registerUser() {
-    var form = document.getElementById('registerform');
-    database.ref('venturers').push().set({
-        firstname: form.fnameinput.value,
-        lastname: form.lnameinput.value,
-        password: form.pwdinput.value,
-        email: form.emailinput.value
-    });
+    if (!validateInfo()) {
+        return false
+    } else {
+        var form = document.getElementById('registerform');
+        fname = form.fnameinput.value;
+        lname = form.lnameinput.value;
+        pwd = form.pwdinput.value;
+        email = form.emailinput.value;
+        database.ref('venturers').push().set({
+            firstname: fname,
+            lastname: lname,
+            password: pwd,
+            email: email
+        });
+    }
 }
 // Login
-function isValidUser() {
+function validateInfo() {
     var form = document.getElementById('registerform');
-    var email = form.emailinput.value;
-    var pwd = form.pwdinput.value;
-    database.ref('venturers').once('value', function(snapshot) {
-        goal = snapshot.val();
-        sleepGoalInput.value = goal;
-    });
+    fname = form.fnameinput.value;
+    lname = form.lnameinput.value;
+    pwd = form.pwdinput.value;
+    email = form.emailinput.value;
+    if (pwd.length < 8) {
+        error = 'Password is less than 8 characters'
+    } else {
+        error = ''
+    };
+
+    if (error) {
+        document.getElementById('errorbox').style.display = 'inline';
+        document.getElementById('errorbox').innerHTML = error;
+        return false;
+    } else {
+        return true;
+    }
 
 }
 
