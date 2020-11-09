@@ -27,6 +27,10 @@ function validateInfo() {
     email = form.emailinput.value;
     if (pwd.length < 8) {
         error = 'Password is less than 8 characters'
+    } else if (pwd.toLowerCase() == pwd) {
+        error = 'Password has to have a capital letter and a number.'
+    } else if (!(/\d/.test(pwd))) {
+        error = 'Password has to have a capital letter and a number.'
     } else {
         error = ''
     };
