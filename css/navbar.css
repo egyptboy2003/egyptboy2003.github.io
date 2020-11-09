@@ -17,7 +17,7 @@ body::-webkit-scrollbar {
     background-color: grey;
     position: sticky;
     margin-bottom: 2%;
-    z-index: 10000;
+    z-index: 2;
 }
 
 #navbar a {

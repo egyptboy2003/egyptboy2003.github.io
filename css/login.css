@@ -1,3 +1,9 @@
+body {
+    background-image: url("../resources/rocks.jpg");
+    background-size: 100vw 100vh;
+    background-repeat: no-repeat;
+}
+
 input {
     width: 60%;
     padding: 12px 20px;
