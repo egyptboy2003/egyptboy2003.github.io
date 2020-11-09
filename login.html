@@ -17,13 +17,19 @@
             <li style="float:right" id="right-align"><a href="./login.html">Register/Login</a></li>
         </ul>
     </div>
-    <div id='login-form'>
-        <form id='registerform' name='registerform' action='' method='post'>
+    <div id='login-form-div'>
+        <button id="registerbtn">Register</button><button id="loginbtn">Login</button>
+        <form id='registerform' name='registerform' action='./dashboard.html' method='POST'>
             <input name="fnameinput" id="fnameinput" type="text" placeholder="First Name"><br>
             <input name="lnameinput" id="lnameinput" type="text" placeholder="Last Name"><br>
             <input name="emailinput" id="emailinput" type="email" placeholder="Email Address"><br>
             <input name="pwdinput" id="pwdinput" type="password" placeholder="Password"><br>
-            <input id="registerbtn" type="submit" value="Register"><input id="loginbtn" type="submit" value="Login">
+            <input name="registersubmit" id="registersubmit" type="submit" placeholder="Submit"><br>
+        </form>
+        <form id='loginform' name='loginform' action='./dashboard.html' method='POST' style='display: none;'>
+            <input name="emailinput" id="emailinput" type="email" placeholder="Email Address"><br>
+            <input name="pwdinput" id="pwdinput" type="password" placeholder="Password"><br>
+            <input name="loginsubmit" id="loginsubmit" type="submit" placeholder="Submit"><br>
         </form>
     </div>
     <script src="https://www.gstatic.com/firebasejs/6.1.0/firebase.js"></script>
