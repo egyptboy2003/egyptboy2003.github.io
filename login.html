@@ -20,10 +20,10 @@
     <div id='login-form-div'>
         <button id="registerbtn">Register</button><button id="loginbtn">Login</button>
         <form id='registerform' name='registerform' onsubmit='return validateInfo()' action='./dashboard.html' method='POST'>
-            <input name="fnameinput" id="fnameinput" type="text" placeholder="First Name" required><br>
-            <input name="lnameinput" id="lnameinput" type="text" placeholder="Last Name" required><br>
-            <input name="emailinput" id="emailinput" type="email" placeholder="Email Address" required><br>
-            <input name="pwdinput" id="pwdinput" type="password" placeholder="Password" required><br>
+            <input name="fnameinput" id="fnameinput" type="text" placeholder="First Name" maxlength=50 required><br>
+            <input name="lnameinput" id="lnameinput" type="text" placeholder="Last Name" maxlength=50 required><br>
+            <input name="emailinput" id="emailinput" type="email" placeholder="Email Address" maxlength=50 required><br>
+            <input name="pwdinput" id="pwdinput" type="password" placeholder="Password" maxlength=50 required><br>
             <input name="registersubmit" id="registersubmit" type="submit" placeholder="Submit"><br>
             <h5 id='errorbox' style='display: none;'></h5>
         </form>
