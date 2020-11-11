@@ -58,7 +58,7 @@ body::-webkit-scrollbar {
 }
 
 #details {
-    display: none !important;
+    display: none;
 }
 
 #navbar li a {

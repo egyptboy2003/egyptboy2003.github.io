@@ -1,27 +1,34 @@
-detailsButton = document.getElementById('details');
-loginButton = document.getElementById('login');
-logoutButton = document.getElementById('logout');
+var logintoken = sessionStorage.getItem('logintoken');
 
 function authRedirect() {
-    if (sessionStorage.getItem('logintoken') == null) {
-        window.location.href = "index.html";
-    };
+    page = window.location.pathname.substring(window.location.pathname.lastIndexOf('/'))
+    if (page == '/dashboard.html' || page == '/details.html') {
+        if (logintoken == null) {
+            window.location.href = "index.html";
+        }
+    }
 }
 
 function authHeaders() {
-    if (sessionStorage.getItem('logintoken') == null) {
+    detailsButton = document.getElementById('details');
+    loginButton = document.getElementById('login');
+    logoutButton = document.getElementById('logout');
+
+    if (logintoken == null) {
         loginButton.style.display = 'inline'
         logoutButton.style.display = 'none'
         detailsButton.style.display = 'none'
     } else {
-        console.log(loginButton)
         loginButton.style.display = 'none'
         logoutButton.style.display = 'inline'
         detailsButton.style.display = 'inline'
     }
 }
 
-function authBoth() {
-    authRedirect();
-    authHeaders();
+function authLogout() {
+    sessionStorage.removeItem('logintoken');
 }
+
+
+window.addEventListener('load', authHeaders)
+window.addEventListener('load', authRedirect)

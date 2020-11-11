@@ -4,10 +4,10 @@
     <title>Dashboard - Venturers Direct</title>
     <link rel="stylesheet" href="css/login.css">
     <link rel="stylesheet" href="css/navbar.css">
-    <script src='js/authenicate.js' type=module></script>
+    <script src='js/authenicate.js'></script>
 </head>
 
-<body onload='authHeaders()'>
+<body>
     <div id='navbar'>
         <ul>
             <li><a href="./index.html">Home</a></li>
@@ -15,7 +15,7 @@
             <li><a href="./calendar.html">Calendar</a></li>
             <li><a href="./details.html" id='details'>Personal Details</a></li>
             <li style="float:right" id="login"><a href="login.html">Register/Login</a></li>
-            <li style="float:right" id="logout"><a href="index.html">Logout</a></li>
+            <li style="float:right" id="logout"><a href="index.html" onclick='authLogout()'>Logout</a></li>
         </ul>
     </div>
     <div id='login-form-div'>
