@@ -4,20 +4,21 @@
     <title>Dashboard - Venturers Direct</title>
     <link rel="stylesheet" href="css/dashboard.css">
     <link rel="stylesheet" href="css/navbar.css">
+    <script src='../egyptboy2003.github.io/js/authenicate.js'></script>
 </head>
 
-<body>
+<body onload='authTest()'>
     <div id='navbar'>
         <ul>
             <li><a href="./index.html">Home</a></li>
             <li><a href="./files.html">Files</a></li>
             <li><a href="./calendar.html">Calendar</a></li>
-            <li><a href="./details.html"> Personal Details</a></li>
-            <li><a href="./forms.html">Form Writer</a></li>
-            <li style="float:right" id="right-align"><a href="index.html">Logout</a></li>
+            <li><a href="./details.html" class="hide" id='details'>Personal Details</a></li>
+            <li style="float:right" id="login" class="show"><a href="login.html">Register/Login</a></li>
+            <li style="float:right" id="logout" class="hide"><a href="index.html">Logout</a></li>
         </ul>
     </div>
-    POGGER
+    <button id='authbutton' onclick='authTest()'>auth test</button>
 </body>
 
 </html>

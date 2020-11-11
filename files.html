@@ -4,13 +4,22 @@
     <link rel="stylesheet" href="css/navbar.css">
 </head>
 
-<body>
+<body onload='authTest()'>
     <div id='navbar'>
         <ul>
             <li><a href="./index.html">Home</a></li>
             <li><a href="./files.html">Files</a></li>
             <li><a href="./calendar.html">Calendar</a></li>
-            <li style="float:right" id="right-align"><a href="./login.html">Register/Login</a></li>
+            <li><a href="./details.html" class="hide" id='details'>Personal Details</a></li>
+            <li style="float:right" id="login" class="show"><a href="login.html">Register/Login</a></li>
+            <li style="float:right" id="logout" class="hide"><a href="index.html">Logout</a></li>
         </ul>
     </div>
+    <div id='files-grid'>
+        <div class='filebutton'><a class='filelink' href='resources\Activity Intention Form.doc' download>Activity Intention</a></div>
+        <div class='filebutton'><a class='filelink' href='resources\RAMS Form.doc' download>RAMS</a></div>
+        <div class='filebutton'><a class='filelink' href='resources\Record Card Venturers.doc' download>Record Card</a></div>
+        <div class='filebutton'><a class='filelink' href='resources\Award Scheme Venturers.pdf' download>Award Scheme</a></div>
+    </div>
+
 </body>

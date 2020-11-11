@@ -53,6 +53,10 @@ body::-webkit-scrollbar {
     float: left;
 }
 
+.hide {
+    display: none !important;
+}
+
 #navbar li a {
     display: block;
     color: white;

@@ -7,13 +7,15 @@
     <link rel="stylesheet" href="css/navbar.css">
 </head>
 
-<body>
+<body onload='authTest()'>
     <div id='navbar'>
         <ul>
             <li><a href="./index.html">Home</a></li>
             <li><a href="./files.html">Files</a></li>
             <li><a href="./calendar.html">Calendar</a></li>
-            <li style="float:right" id="right-align"><a href="login.html">Register/Login</a></li>
+            <li><a href="./details.html" class="hide" id='details'>Personal Details</a></li>
+            <li style="float:right" id="login" class="show"><a href="login.html">Register/Login</a></li>
+            <li style="float:right" id="logout" class="hide"><a href="index.html">Logout</a></li>
         </ul>
     </div>
     <div id='bgimg-1' class='parallax'>
