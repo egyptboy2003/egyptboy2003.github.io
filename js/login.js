@@ -79,6 +79,11 @@ function validateLogin() {
         document.getElementById('loginerrorbox').style.display = 'inline';
         return false
     } else if (error == false) {
+        database.ref('venturers').orderByChild("email").equalTo(email).on('value', (snapshot) => {
+            snapshot.forEach(function(childSnapshot) {
+                sessionStorage.setItem('logintoken', childSnapshot.key);
+            });
+        });
         document.getElementById('loginerrorbox').style.display = 'none';
         return true
     }
