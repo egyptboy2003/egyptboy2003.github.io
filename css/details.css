@@ -1,0 +1,37 @@
+#details-form-div {
+    text-align: center;
+    margin: 7.5% 20% 0% 20%;
+    border: 5px solid black;
+    background-color: #999;
+    border-radius: 15px;
+    padding-bottom: 1%
+}
+
+#details-form {
+    display: block;
+    margin: auto;
+    margin-block-end: 0;
+}
+
+body {
+    font-family: 'Rubik', sans-serif;
+    font-size: 1.25em;
+}
+
+input {
+    width: 40%;
+    padding: 16px 30px;
+    margin: 0.75% 0.75%;
+    margin-bottom: 1.5%;
+    box-sizing: border-box;
+}
+
+input::placeholder {
+    color: #666;
+}
+
+input[type=submit] {
+    width: 28%;
+    margin-left: 2%;
+    margin-right: 2%;
+}

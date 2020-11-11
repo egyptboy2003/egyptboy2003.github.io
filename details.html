@@ -13,10 +13,27 @@
             <li><a href="./index.html">Home</a></li>
             <li><a href="./files.html">Files</a></li>
             <li><a href="./calendar.html">Calendar</a></li>
-            <li><a href="./details.html" id='details'>Personal Details</a></li>
+            <li><a href="./details.html" id='details' style='display: none;'>Personal Details</a></li>
             <li style="float:right" id="login"><a href="login.html">Register/Login</a></li>
-            <li style="float:right" id="logout"><a href="index.html">Logout</a></li>
+            <li style="float:right" id="logout"><a href="index.html" onclick='authLogout()'>Logout</a></li>
         </ul>
+    </div>
+    <div id=details-form-div>
+        <form id='details-form' name='details-form' onsubmit='return validateDetails()' method='POST'>
+            <h4>Venturer Details</h4>
+            <input id='first-name' name='first-name' type="text" placeholder="First Name" maxlength=50 required>
+            <input id='last-name' name='last-name' type="text" placeholder="Last Name" maxlength=50 required><br>
+            <input id='email' name='email' type="email" placeholder="Email Address" maxlength=50 required>
+            <input id='phone' name='phone' type="tel" placeholder="Mobile Number" maxlength=20 required><br>
+            <input id='address' name='address' type="text" placeholder="Home Address" maxlength=50 required>
+            <input id='allergies' name='allergies' type="text" placeholder="Any allergies?" maxlength=100 required>
+            <h4>Parent Details</h4>
+            <input id='parent-first-name' name='parent-first-name' type="text" placeholder="Parent First Name" maxlength=50 required>
+            <input id='parent-last-name' name='parent-last-name' type="text" placeholder="Parent Last Name" maxlength=50 required><br>
+            <input id='parent-email' name='parent-email' type="email" placeholder="Parent Email Address" maxlength=50 required>
+            <input id='parent-phone' name='parent-phone' type="tel" placeholder="Parent Mobile Number" maxlength=20 required><br>
+            <input id='details-submit' name='details-submit' type="submit" placeholder="Submit"><br>
+        </form>
     </div>
 </body>
 

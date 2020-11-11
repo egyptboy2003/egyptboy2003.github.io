@@ -30,5 +30,5 @@ function authLogout() {
 }
 
 
-window.addEventListener('load', authHeaders)
-window.addEventListener('load', authRedirect)
+window.addEventListener('DOMContentLoaded', authHeaders)
+window.addEventListener('DOMContentLoaded', authRedirect)
