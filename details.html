@@ -1,7 +1,7 @@
 <html>
 
 <head>
-    <title>Dashboard - Venturers Direct</title>
+    <title>Details | Venturers Direct</title>
     <link rel="stylesheet" href="css/details.css">
     <link rel="stylesheet" href="css/navbar.css">
     <script src='js/authenicate.js'></script>
@@ -15,12 +15,13 @@
             <li><a href="./calendar.html">Calendar</a></li>
             <li><a href="./details.html" id='details' style='display: none;'>Personal Details</a></li>
             <li style="float:right" id="loginout">
-                <a id='loginout-text' onclick='authSwitch()'></a>
+                <a id='loginouttext' onclick='authSwitch()'></a>
             </li>
         </ul>
     </div>
-    <div id=details-form-div>
-        <form id='details-form' name='details-form' method='POST'>
+    <!-- Input fields for details form-->
+    <div id=detailsformdiv>
+        <form id='detailsform' name='detailsform' method='POST'>
             <h4>Venturer Details</h4>
             <input class='inputfield' id='firstname' name='firstname' type="text" placeholder="First Name" maxlength=50 required>
             <input class='inputfield' id='lastname' name='lastname' type="text" placeholder="Last Name" maxlength=50 required><br>
@@ -36,6 +37,8 @@
             <input id='detailssubmit' name='detailssubmit' type="submit" placeholder="Submit"><br>
         </form>
     </div>
+
+    <!-- link to firebase database -->
     <script src="https://www.gstatic.com/firebasejs/6.1.0/firebase.js"></script>
     <script>
         // Your web app's Firebase configuration

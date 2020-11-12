@@ -4,7 +4,7 @@ body {
     background-repeat: no-repeat;
 }
 
-#files-grid {
+#filesgrid {
     display: inline-grid;
     grid-template-columns: auto auto;
     gap: 10% 2%;

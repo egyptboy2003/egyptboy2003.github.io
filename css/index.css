@@ -6,21 +6,21 @@
     background-size: cover;
 }
 
-#bgimg-1 {
+#bgimg1 {
     background-image: url("../resources/water.jpg");
 }
 
-#bgimg-2 {
+#bgimg2 {
     background-image: url("../resources/bridge.jpg");
     height: 75%
 }
 
-#bgimg-3 {
+#bgimg3 {
     background-image: url("../resources/amongus.jpg");
     height: 100%
 }
 
-#caption-1 {
+#caption1 {
     color: rgb(28, 23, 23);
     font-size: 100px;
     text-align: center;

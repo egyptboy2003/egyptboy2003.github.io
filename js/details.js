@@ -1,11 +1,9 @@
 var database = firebase.database();
-var form = document.getElementById('details-form');
+var form = document.getElementById('detailsform');
 var userKey = sessionStorage.getItem('logintoken');
-var userRef = ''
 
+// Send form data to database
 function inputData() {
-
-    console.log(userRef)
     database.ref('venturers/' + userKey + '/').set({
         email: form.email.value,
         details: {
@@ -24,8 +22,8 @@ function inputData() {
     });
 }
 
+// Set the starting value for input fields to be the database values.
 function fetchData() {
-    console.log(userKey)
     database.ref('venturers').orderByKey().equalTo(userKey).on('value', (snapshot) => {
         snapshot.forEach(function(childSnapshot) {
             userRef = childSnapshot.val();
@@ -43,5 +41,6 @@ function fetchData() {
     });
 }
 
+// Add event listeners for functions
 document.addEventListener('DOMContentLoaded', fetchData);
 document.getElementById('detailssubmit').addEventListener('click', inputData);

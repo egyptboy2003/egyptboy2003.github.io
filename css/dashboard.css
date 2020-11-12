@@ -1,10 +1,9 @@
 body {
     background-image: url('../resources/mountain.png');
     background-size: 100vw 100vh;
-    background-repeat: no-repeat;
 }
 
-#links-grid {
+#linksgrid {
     display: inline-grid;
     grid-template-columns: auto auto;
     gap: 10% 2%;
@@ -30,4 +29,8 @@ body {
 
 .pagelink:hover {
     background-color: #222;
+}
+
+#logout {
+    cursor: pointer;
 }

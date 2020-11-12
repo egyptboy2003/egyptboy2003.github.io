@@ -68,7 +68,8 @@ function validateInfo() {
 
 }
 
-// Test if email exists, if so does password match. If it does, store UserID
+// Test if email exists, if so does password match? If it does, give logintoken with userID as value.
+// If login successful, send to dashboard.html, if unsuccessful show error
 function validateLogin() {
     var emailExists = false
     var form = document.getElementById('loginform');
@@ -111,6 +112,8 @@ function toRegister() {
 // Add event listeners for the login buttons & submit buttons
 document.getElementById('registerbtn').addEventListener('click', toRegister);
 document.getElementById('loginbtn').addEventListener('click', toLogin);
+
+// Prevent login form from submitting, so we can have more control over it in javascript
 document.getElementById("loginsubmit").addEventListener("click", function(event) {
     event.preventDefault()
     validateLogin()
