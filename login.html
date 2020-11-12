@@ -13,9 +13,10 @@
             <li><a href="./index.html">Home</a></li>
             <li><a href="./files.html">Files</a></li>
             <li><a href="./calendar.html">Calendar</a></li>
-            <li><a href="./details.html" id='details'>Personal Details</a></li>
-            <li style="float:right" id="login"><a href="login.html">Register/Login</a></li>
-            <li style="float:right" id="logout"><a href="index.html" onclick='authLogout()'>Logout</a></li>
+            <li><a href="./details.html" id='details' style='display: none;'>Personal Details</a></li>
+            <li style="float:right" id="loginout">
+                <a id='loginout-text' onclick='authSwitch()'></a>
+            </li>
         </ul>
     </div>
     <div id='login-form-div'>

@@ -15,7 +15,16 @@ function registerUser() {
             email: email,
             details: {
                 firstname: fname,
-                lastname: lname
+                lastname: lname,
+                phone: '',
+                address: '',
+                allergies: ''
+            },
+            parentdetails: {
+                firstname: '',
+                lastname: '',
+                email: '',
+                phone: ''
             }
         }).key;
         sessionStorage.setItem('logintoken', id);
@@ -61,32 +70,27 @@ function validateInfo() {
 
 // Test if email exists, if so does password match. If it does, store UserID
 function validateLogin() {
-    var error = true;
+    var emailExists = false
     var form = document.getElementById('loginform');
     pwd = form.pwdinput.value;
     email = form.emailinput.value;
 
-    database.ref('venturers').orderByChild("email").equalTo(email).on('value', (snapshot) => {
+    database.ref('venturers').orderByChild("email").equalTo(email).on('value', function(snapshot) {
         snapshot.forEach(function(childSnapshot) {
+            emailExists = true
             var childData = childSnapshot.val();
             if (childData.password == pwd) {
-                error = false;
+                sessionStorage.setItem('logintoken', childSnapshot.key);
+                window.location.href = 'dashboard.html';
+            } else {
+                document.getElementById('loginerrorbox').style.display = 'block';
             }
         });
+        if (!emailExists) {
+            document.getElementById('loginerrorbox').style.display = 'block';
+        }
     });
 
-    if (error == true) {
-        document.getElementById('loginerrorbox').style.display = 'inline';
-        return false
-    } else if (error == false) {
-        database.ref('venturers').orderByChild("email").equalTo(email).on('value', (snapshot) => {
-            snapshot.forEach(function(childSnapshot) {
-                sessionStorage.setItem('logintoken', childSnapshot.key);
-            });
-        });
-        document.getElementById('loginerrorbox').style.display = 'none';
-        return true
-    }
 
 }
 // Changes sign in boxes
@@ -107,3 +111,7 @@ function toRegister() {
 // Add event listeners for the login buttons & submit buttons
 document.getElementById('registerbtn').addEventListener('click', toRegister);
 document.getElementById('loginbtn').addEventListener('click', toLogin);
+document.getElementById("loginsubmit").addEventListener("click", function(event) {
+    event.preventDefault()
+    validateLogin()
+});

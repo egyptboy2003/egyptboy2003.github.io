@@ -1,5 +1,7 @@
 body {
-    background-image: url('../resources/bridge.jpg')
+    background-image: url('../resources/bridge.jpg');
+    background-size: 100vw 100vh;
+    background-repeat: no-repeat;
 }
 
 #files-grid {

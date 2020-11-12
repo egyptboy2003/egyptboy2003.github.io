@@ -53,10 +53,6 @@ body::-webkit-scrollbar {
     float: left;
 }
 
-#logout {
-    display: none;
-}
-
 #details {
     display: none;
 }
@@ -68,4 +64,8 @@ body::-webkit-scrollbar {
     padding: 14px 16px;
     text-decoration: none;
     font-family: 'Rubik', sans-serif;
+}
+
+#loginout {
+    cursor: pointer;
 }

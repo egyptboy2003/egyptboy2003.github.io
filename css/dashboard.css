@@ -1,5 +1,33 @@
-#authbutton {
+body {
+    background-image: url('../resources/mountain.png');
+    background-size: 100vw 100vh;
+    background-repeat: no-repeat;
+}
+
+#links-grid {
+    display: inline-grid;
+    grid-template-columns: auto auto;
+    gap: 10% 2%;
+    padding: 1.5%;
+    width: 75%;
+    margin: 10% 12%;
+}
+
+.redirectbutton {
+    background-color: #333;
+    border: 3px solid #222;
+    font-size: 30px;
+    text-align: center;
+}
+
+.pagelink {
+    text-decoration: none;
+    color: white;
     display: block;
-    padding: 4%;
-    margin: auto auto;
+    text-align: center;
+    padding: 10% 10%;
+}
+
+.pagelink:hover {
+    background-color: #222;
 }
