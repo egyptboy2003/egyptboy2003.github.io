@@ -1,0 +1,9 @@
+.square {
+    display: grid;
+    grid-template: 'main main main', 'main main main'
+}
+
+.table {
+    display: grid;
+    grid-area: "main"
+}
