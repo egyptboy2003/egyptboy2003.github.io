@@ -4,11 +4,13 @@
     background-color: #50f;
     text-align: center;
     vertical-align: middle;
-    line-height: 150px;
     color: #fff;
-    font-size: 20px;
+    font-size: 2vw;
 }
 
+.text {
+    vertical-align: middle;
+}
 #table {
     padding: 30px;
     display: grid;
