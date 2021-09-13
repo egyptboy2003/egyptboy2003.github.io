@@ -1,9 +1,18 @@
 .square {
-    display: grid;
-    grid-template: 'main main main', 'main main main'
+    display: inline-grid;
+    grid-area: 'square';
+    background-color: #50f;
+    text-align: center;
+    vertical-align: middle;
+    line-height: 150px;
+    color: #fff;
+    font-size: 20px;
 }
 
-.table {
+#table {
+    padding: 30px;
     display: grid;
-    grid-area: "main"
+    grid-template-rows: 150px 150px 150px;
+    grid-template-columns: 150px 150px 150px;
+    gap: 10px;
 }
