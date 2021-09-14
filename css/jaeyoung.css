@@ -51,3 +51,8 @@
         gap: 2.5vh;
     }
 }
+
+#free {
+    background-image: url('../resources/jaejae.jpg');
+    background-size: cover;
+}

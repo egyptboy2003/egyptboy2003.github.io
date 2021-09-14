@@ -18,19 +18,29 @@ const poss_options = [
 var used_nums = []
 const squares = document.getElementsByClassName('square');
 var num = 0;
+var free_selected = false;
 
 function changeColor() {
-    console.log(this.style.backgroundColor);
-    if (this.style.backgroundColor == "rgb(101, 0, 224)") {
-        this.style.backgroundColor = "#574b66";
+    if (this.id == "free") {
+        if (free_selected) {
+            this.style.backgroundImage = "url('./resources/jaejae.jpg')";
+            free_selected = false;
+        } else {
+            this.style.backgroundImage = "url('./resources/jaejaeselected.jpg')";
+            free_selected = true;
+        }
     } else {
-        this.style.backgroundColor = "#6500e0"
+        if (this.style.backgroundColor == "rgb(101, 0, 224)") {
+            this.style.backgroundColor = "#574b66";
+        } else {
+            this.style.backgroundColor = "#6500e0"
+        }
     }
 }
 
 function setupGrid() {
     Array.from(squares).forEach(element => {
-        if (element.id != "5") {
+        if (element.id != "free") {
             do {
                 num = Math.floor(Math.random() * 14);
             } while (used_nums.includes(num));
@@ -41,7 +51,7 @@ function setupGrid() {
 }
 
 for (var i = 0; i < squares.length; i++) {
-    squares[i].addEventListener('click', changeColor);
+    squares[i].addEventListener('mousedown', changeColor);
 }
 
 setupGrid();
