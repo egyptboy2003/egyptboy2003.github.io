@@ -1,20 +1,50 @@
-.square {
-    display: inline-grid;
-    grid-area: 'square';
-    background-color: #50f;
-    text-align: center;
-    vertical-align: middle;
-    color: #fff;
-    font-size: 2vw;
+#container {
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
 }
 
 .text {
-    vertical-align: middle;
+    display: flex;
+    text-align: center;
+    align-items: center;
+    justify-content: center;
+    padding: 10px;
 }
-#table {
-    padding: 30px;
-    display: grid;
-    grid-template-rows: 150px 150px 150px;
-    grid-template-columns: 150px 150px 150px;
-    gap: 10px;
+
+@media only screen and (orientation:portrait) {
+    .square {
+        display: inline-grid;
+        grid-area: 'square';
+        background-color: #50f;
+        color: #fff;
+        font-size: 3.5vw;
+        user-select: none;
+    }
+    #table {
+        padding-top: 50px;
+        display: grid;
+        grid-template-rows: 25vw 25vw 25vw;
+        grid-template-columns: 25vw 25vw 25vw;
+        gap: 2.5vw;
+    }
+}
+
+@media only screen and (orientation:landscape) {
+    .square {
+        display: inline-grid;
+        grid-area: 'square';
+        background-color: #50f;
+        color: #fff;
+        font-size: 3.5vh;
+        user-select: none;
+    }
+    #table {
+        padding-top: 50px;
+        display: grid;
+        grid-template-rows: 25vh 25vh 25vh;
+        grid-template-columns: 25vh 25vh 25vh;
+        gap: 2.5vh;
+    }
 }
