@@ -20,10 +20,11 @@ const squares = document.getElementsByClassName('square');
 var num = 0;
 
 function changeColor() {
-    if (this.style.backgroundColor == "red") {
-        this.style.backgroundColor = "#50f";
+    console.log(this.style.backgroundColor);
+    if (this.style.backgroundColor == "rgb(101, 0, 224)") {
+        this.style.backgroundColor = "#574b66";
     } else {
-        this.style.backgroundColor = "red"
+        this.style.backgroundColor = "#6500e0"
     }
 }
 
