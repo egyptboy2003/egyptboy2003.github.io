@@ -41,7 +41,6 @@
 @media only screen and (orientation:landscape) {
     .square {
         display: inline-grid;
-        grid-area: 'square';
         background-color: #574B66;
         color: #fff;
         font-size: 3vh;
@@ -57,19 +56,31 @@
     }
     
     .square:hover {
-        animation-name: border-grow;
-        animation-duration: 0.25s;
-        animation-iteration-count: 1;
+        transition: box-shadow 0.2s;
         box-shadow: 5px 5px 10px #3B3345;
+    }
+
+    .square:not(:hover) {
+        transition: box-shadow 0.1s;
+        box-shadow: 0px 0px 0px #3B3345;
     }
 }
 
-#free {
+#free_square {
     background-image: url('../resources/jaejae.jpg');
     background-size: cover;
+}
+
+#free_text {
+    border-radius: 15px;
 }
 
 @keyframes border-grow {
     from {box-shadow: 0px 0px;}
     to {box-shadow: 5px 5px 10px #3B3345;}
+}
+
+@keyframes border-shrink {
+    from {box-shadow: 5px 5px 10px #3B3345;}
+    to {box-shadow: 0px 0px;}
 }

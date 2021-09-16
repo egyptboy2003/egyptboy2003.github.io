@@ -21,13 +21,11 @@ var num = 0;
 var free_selected = false;
 
 function changeColor() {
-    if (this.id == "free") {
-        if (free_selected) {
-            this.style.backgroundImage = "url('./resources/jaejae.jpg')";
-            free_selected = false;
+    if (this.id == "free_square") {
+        if (this.children[0].style.backgroundColor == "rgba(101, 0, 224, 0.75)") {
+            this.children[0].style.backgroundColor = "rgba(87, 75, 102, 0.4)";
         } else {
-            this.style.backgroundImage = "url('./resources/jaejaeselected.jpg')";
-            free_selected = true;
+            this.children[0].style.backgroundColor = "rgba(101, 0, 224, 0.4)"
         }
     } else {
         if (this.style.backgroundColor == "rgb(101, 0, 224)") {
@@ -40,7 +38,7 @@ function changeColor() {
 
 function setupGrid() {
     Array.from(squares).forEach(element => {
-        if (element.id != "free") {
+        if (element.id != "free_square") {
             do {
                 num = Math.floor(Math.random() * 14);
             } while (used_nums.includes(num));
