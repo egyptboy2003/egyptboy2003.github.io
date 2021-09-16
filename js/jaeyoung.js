@@ -22,7 +22,7 @@ var free_selected = false;
 
 function changeColor() {
     if (this.id == "free_square") {
-        if (this.children[0].style.backgroundColor == "rgba(101, 0, 224, 0.75)") {
+        if (this.children[0].style.backgroundColor == "rgba(101, 0, 224, 0.4)") {
             this.children[0].style.backgroundColor = "rgba(87, 75, 102, 0.4)";
         } else {
             this.children[0].style.backgroundColor = "rgba(101, 0, 224, 0.4)"
