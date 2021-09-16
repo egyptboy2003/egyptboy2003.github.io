@@ -28,6 +28,7 @@
         color: #fff;
         font-size: 3vw;
         user-select: none;
+        border-radius: 15px;
     }
     #table {
         display: grid;
@@ -45,16 +46,30 @@
         color: #fff;
         font-size: 3vh;
         user-select: none;
+        border-radius: 15px;
     }
+
     #table {
         display: grid;
         grid-template-rows: 25vh 25vh 25vh;
         grid-template-columns: 25vh 25vh 25vh;
         gap: 2.5vh;
     }
+    
+    .square:hover {
+        animation-name: border-grow;
+        animation-duration: 0.25s;
+        animation-iteration-count: 1;
+        box-shadow: 5px 5px 10px #3B3345;
+    }
 }
 
 #free {
     background-image: url('../resources/jaejae.jpg');
     background-size: cover;
+}
+
+@keyframes border-grow {
+    from {box-shadow: 0px 0px;}
+    to {box-shadow: 5px 5px 10px #3B3345;}
 }
