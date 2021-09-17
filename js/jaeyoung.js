@@ -13,7 +13,9 @@ const poss_options = [
     "Deep sigh",
     "Stay out of it / None of your business",
     "Groans",
-    "Fans self intensely"
+    "Fans self intensely",
+    "Leaves room to drink",
+    "Mentions birthday party"
 ]
 var used_nums = []
 const squares = document.getElementsByClassName('square');
