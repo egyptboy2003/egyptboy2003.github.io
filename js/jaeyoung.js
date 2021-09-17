@@ -15,7 +15,9 @@ const poss_options = [
     "Groans",
     "Fans self intensely",
     "Leaves room to drink",
-    "Mentions birthday party"
+    "Mentions birthday party",
+    "Back Scratch",
+    "Annoys the teacher"
 ]
 var used_nums = []
 const squares = document.getElementsByClassName('square');
@@ -42,7 +44,7 @@ function setupGrid() {
     Array.from(squares).forEach(element => {
         if (element.id != "free_square") {
             do {
-                num = Math.floor(Math.random() * 14);
+                num = Math.floor(Math.random() * 18);
             } while (used_nums.includes(num));
             used_nums.push(num);
             element.children[0].innerHTML = poss_options[num];
