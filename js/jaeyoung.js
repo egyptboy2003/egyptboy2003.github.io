@@ -44,7 +44,7 @@ function setupGrid() {
     Array.from(squares).forEach(element => {
         if (element.id != "free_square") {
             do {
-                num = Math.floor(Math.random() * 18);
+                num = Math.floor(Math.random() * 19);
             } while (used_nums.includes(num));
             used_nums.push(num);
             element.children[0].innerHTML = poss_options[num];
