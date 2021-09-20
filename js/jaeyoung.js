@@ -14,9 +14,7 @@ const poss_options = [
     "Stay out of it / None of your business",
     "Groans",
     "Fans self intensely",
-    "Leaves room to drink",
-    "Mentions birthday party",
-    "Back Scratch",
+    "Back scratch",
     "Annoys the teacher"
 ]
 var used_nums = []
