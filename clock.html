@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+
+<html>
+<head>
+<meta charset="UTF-8">
+
+<!-- Refresh every three seconds - this is useful because OBS will NOT automatically detect changes and update a browser source the same way it would an average text file. Useful if the content of the text changes often, like followers or song titles -->
+
+<meta http-equiv="refresh" content="3">
+<style type="text/css">
+
+<!-- If you use a google font that's imported from google APIs in the rest of your overlay (like in streamlabs), then you'll have to go download and install said font on your PC as you are now in the domain of local resources, not something controlled server side -->
+
+<!-- You'll note that H1 and H2 have a LOT of styles assigned to them. H1 and H2 are HTML headers and without such strict control, their default (and indeed, different) sizes would not be overruled -->
+
+h1 {
+background-color: rgba(0, 0, 0, 0);
+margin: 0px auto; 
+overflow: hidden;
+font-weight: 200;
+font-size: 16px;
+font-family: 'Carrois Gothic SC', sans-serif;
+list-style: none;
+align: center;    
+text-transform: uppercase;
+opacity: 1;
+padding: 5px;
+justify-content: center;
+flex-flow: row;
+display: inline;
+box-sizing: border-box;
+color: rgba(255, 200, 0, 1);
+text-shadow: 0px 0px 3px rgba(204, 68, 0, 2), 0px 0px 2px rgba(204, 68, 0, 2), 0px 0px 2px rgba(204, 68, 0, 2);
+}
+
+
+h2 {
+background-color: rgba(0, 0, 0, 0);
+margin: 0px; 
+overflow: hidden;
+font-weight: 800;
+font-size: 15px;
+font-family: 'Acumin Pro condensed';
+list-style: none;
+align: top;    
+text-transform: uppercase;
+opacity: 1;
+padding: 5px;
+justify-content: center;
+flex-flow: row;
+display: inline;
+box-sizing: border-box;
+color: red;
+text-shadow: 2px 2px black;
+position:absolute;
+left:0px;
+top:0px;
+font-style: italic;
+-webkit-text-fill-color: white; /* Will override color (regardless of order) */
+  -webkit-text-stroke-width: .1px;
+  -webkit-text-stroke-color: black;
+}
+
+</style>
+
+<script>
+function startTime() {
+    var today = new Date();
+    var h = today.getHours();
+    var m = today.getMinutes();
+    var s = today.getSeconds();
+    var hours = h
+    var ampm = hours >= 12 ? 'PM' : 'AM';
+    hours = hours % 12;
+    hours = hours ? hours : 12; // the hour '0' should be '12'
+    m = checkTime(m);
+    s = checkTime(s);
+    document.getElementById('txt').innerHTML =
+    hours + ":" + m + " " + ampm + " CDT";
+    var t = setTimeout(startTime, 500);
+}
+function checkTime(i) {
+    if (i < 10) {i = "0" + i};  // add zero in front of numbers < 10
+    return i;
+}
+</script>
+</head>
+<body onload="startTime()">
+<div align="center"><h2>
+CURRENT TIME:<br>
+<div id="txt"></div>
+</h2>
+</div>
+</body>
+</html>
