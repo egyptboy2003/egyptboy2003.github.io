@@ -1,9 +1,8 @@
 let valid = false;
-var dataDict = {
-    'houseNumber': null,
-    'street': null,
-    'suburb': null,
-    'city': null
+let dataDict = {
+    'street_number': null,
+    'route': null,
+    'political': null,
 }
 
 let autocomplete;
@@ -22,6 +21,7 @@ JFCustomWidget.subscribe("submit", function (msg) {
     JFCustomWidget.sendData(data);
 })
 
+
 function initAutocomplete() {
     autocomplete = new google.maps.places.Autocomplete(
         document.getElementById('address'),
@@ -30,24 +30,48 @@ function initAutocomplete() {
             fields: ['place_id', 'geometry', 'name', 'address_components', 'types']
         }
     )
-    autocomplete.addListener('place_changed', onPlaceChanged)
+    autocomplete.addListener('place_changed', onPlaceChanged);
 }
 
+// called each time an address selected from the dropdown
 function onPlaceChanged() {
     const place = autocomplete.getPlace();
-    for (const [i, entry] in dataDict.entries()) {
-        valid = !!place.geometry;
-        let valueToSet = (valid) ? place.address_components[i].long_name : null
-        document.getElementById(entry).value = valueToSet;
+    if (!!place.geometry) {
+        valid = true;
+        updateDataDict(place.address_components);
+    } else {
+        valid = false;
+        clearDataDict();
     }
+    updateHTML();
 }
 
-function isValid(dataDict) {
-    valid = true;
-    for (const [_, value] of Object.entries(dataDict)) {
-        if (!value) {
-            valid = false;
-        }
-    }
-    return valid
+// pulls vals from places api and adds them to the dictionary
+function updateDataDict(components) {
+    console.log(components);
+    clearDataDict();
+    // update new ones
+    Object.values(components).forEach(component => {
+        let types = component['types'];
+        Object.entries(dataDict).forEach(entry => {
+            const [key, value] = entry;
+            if (!value && types.includes(key)) {
+                dataDict[key] = component.long_name
+            }
+        });
+    });
+}
+
+// resets all vals in the dictionary, a clean slate
+function clearDataDict() {
+    Object.keys(dataDict).forEach(key => {
+        dataDict[key] = null;
+    })
+}
+
+// punts the values in the dict into the input fields
+function updateHTML() {
+    Object.keys(dataDict).forEach(key => {
+        document.getElementById(key).value = dataDict[key];
+    })
 }

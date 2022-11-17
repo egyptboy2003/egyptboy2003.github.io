@@ -3,6 +3,7 @@
 <head>
     <title>Address Autofill</title>
     <script src="https://js.jotform.com/JotFormCustomWidget.min.js"></script>
+    <script src="js/widget.js"></script>
     <script async src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDgI4exVrBG3oDKGOH6gW8scMzQ8OFIRPs&libraries=places&callback=initAutocomplete"></script>
 
 </head>
@@ -15,16 +16,13 @@
 
         <!-- Autofilled fields -->
         <div id="details" name="details"></div><br>
-        <label for="houseNumber">House Number</label>
-        <input readonly type="text" id="houseNumber" name="houseNumber" /><br>
-        <label for="street">Street Name</label>
-        <input readonly type="text" id="street" name="street" /><br>
-        <label for="suburb">Suburb</label>
-        <input readonly type="text" id="suburb" name="suburb" /><br>
-        <label for="city">City</label>
-        <input readonly type="text" id="city" name="city" /><br>
+        <label for="street_number">House Number</label>
+        <input readonly type="text" id="street_number" name="street_number" /><br>
+        <label for="route">Street Name</label>
+        <input readonly type="text" id="route" name="route" /><br>
+        <label for="political">Suburb</label>
+        <input readonly type="text" id="political" name="political" /><br>
     </div>
-    <script src="js/widget.js"></script>
 </body>
 
 </html>
