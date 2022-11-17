@@ -14,11 +14,13 @@ JFCustomWidget.subscribe("ready", function (msg) {
 
 // subscribe to submit event
 JFCustomWidget.subscribe("submit", function (msg) {
+    console.log("Jotform submit msg received")
     var data = {
         valid: valid,
         value: JSON.stringify(dataDict)
     }
-    JFCustomWidget.sendData(data);
+    JFCustomWidget.sendSubmit(data);
+    console.log("Jotform data sent")
 })
 
 
@@ -48,7 +50,6 @@ function onPlaceChanged() {
 
 // pulls vals from places api and adds them to the dictionary
 function updateDataDict(components) {
-    console.log(components);
     clearDataDict();
     // update new ones
     Object.values(components).forEach(component => {
