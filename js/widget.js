@@ -51,5 +51,3 @@ function isValid(dataDict) {
     }
     return valid
 }
-
-alert('inited')
