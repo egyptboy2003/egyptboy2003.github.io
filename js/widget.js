@@ -17,7 +17,7 @@ JFCustomWidget.subscribe("submit", function (msg) {
     console.log("Jotform submit msg received")
     var data = {
         valid: valid,
-        value: JSON.stringify(dataDict)
+        value: JSON.stringify([dataDict])
     }
     JFCustomWidget.sendSubmit(data);
     console.log("Jotform data sent")
