@@ -1,8 +1,8 @@
 let valid = false;
 let dataDict = {
-    'street_number': null,
-    'route': null,
-    'political': null,
+    'street_number': "",
+    'route': "",
+    'political': "",
 }
 
 let autocomplete;
@@ -17,7 +17,7 @@ JFCustomWidget.subscribe("submit", function (msg) {
     console.log("Jotform submit msg received")
     var data = {
         valid: valid,
-        value: JSON.stringify([dataDict])
+        value: formatOutput()
     }
     JFCustomWidget.sendSubmit(data);
     console.log("Jotform data sent")
@@ -66,7 +66,7 @@ function updateDataDict(components) {
 // resets all vals in the dictionary, a clean slate
 function clearDataDict() {
     Object.keys(dataDict).forEach(key => {
-        dataDict[key] = null;
+        dataDict[key] = "";
     })
 }
 
@@ -75,4 +75,17 @@ function updateHTML() {
     Object.keys(dataDict).forEach(key => {
         document.getElementById(key).value = dataDict[key];
     })
+}
+
+function formatOutput() {
+    let output = "";
+    if (dataDict["street_number"]) {
+        output += `${dataDict["street_number"]} `
+    }
+    output += dataDict["route"];
+    if (dataDict["political"]) {
+        output += `, ${dataDict["political"]}`
+    }
+
+    return output
 }
