@@ -15,7 +15,7 @@ JFCustomWidget.subscribe("ready", function (msg) {
 // subscribe to submit event
 JFCustomWidget.subscribe("submit", function (msg) {
     var data = {
-        valid: isValid(dataDict),
+        valid: valid,
         value: JSON.stringify(dataDict)
     }
     JFCustomWidget.sendData(data);
