@@ -1,0 +1,30 @@
+﻿<html>
+
+<head>
+    <title>Address Autofill</title>
+    <script src="https://js.jotform.com/JotFormCustomWidget.min.js"></script>
+    <script async src="https://maps.googleapis.com/maps/api/js?key=AIzaSyD9g5nXAvjGPy9fu-RGh6Yx7KxGJrd3Hk8&libraries=places&callback=initAutocomplete"></script>
+
+</head>
+
+<body>
+    <div class="container">
+        <!-- User input -->
+        <label for="address">Address</label>
+        <input type="text" id="address" name="address" style="width: 100%" /><br><br>
+
+        <!-- Autofilled fields -->
+        <div id="details" name="details"></div><br>
+        <label for="houseNumber">House Number</label>
+        <input readonly type="text" id="houseNumber" name="houseNumber" /><br>
+        <label for="street">Street Name</label>
+        <input readonly type="text" id="street" name="street" /><br>
+        <label for="suburb">Suburb</label>
+        <input readonly type="text" id="suburb" name="suburb" /><br>
+        <label for="city">City</label>
+        <input readonly type="text" id="city" name="city" /><br>
+    </div>
+    <script src="js/widget.js"></script>
+</body>
+
+</html>
