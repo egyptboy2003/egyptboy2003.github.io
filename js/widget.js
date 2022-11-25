@@ -46,6 +46,11 @@ function onPlaceChanged() {
         clearDataDict();
     }
     updateHTML();
+    var data = {
+        valid: valid,
+        value: formatOutput()
+    }
+    JFCustomWidget.sendData(data);
 }
 
 // pulls vals from places api and adds them to the dictionary
